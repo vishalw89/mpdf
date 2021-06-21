@@ -26349,7 +26349,7 @@ class mPDF
 						$this->current_parser = $tpl['parser'];
 						reset($tpl['resources'][1]);
 						while (list($k, $v) = each($tpl['resources'][1])) {
-							if ($k == '/Shading') {
+							if ($k == '/Shading' && is_array($v[1])) {
 								while (list($k2, $v2) = each($v[1])) {
 									$this->_out($k2 . " ", false);
 									$this->pdf_write_value($v2);
